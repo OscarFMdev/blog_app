@@ -32,19 +32,17 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
-  <summary>Client</summary>
+  <summary>Programming language</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://www.ruby-lang.org/es/">Ruby</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
 </details>
 
@@ -59,21 +57,17 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **The app allows you to create comments**
+- **The app allows you to create posts**
+- - **The app allows you to like posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+Not yet available
+<!-- - [Live Demo Link](https://yourdeployedapplicationlink.com) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,63 +75,46 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+In order to run this project you need to have ruby, postgres and rails installed all the pages are in [🛠 Built With](#built-with) section.
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone git@github.com:OscarFMdev/blog_app.git
 ```
---->
+
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
 
 ```sh
-  cd my-project
+  cd blog_app
   gem install
 ```
---->
+
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
   rails server
 ```
---->
+
 
 ### Run tests
 
-To run tests, run the following command:
+Not yet available
 
 <!--
 Example command:
@@ -149,7 +126,7 @@ Example command:
 
 ### Deployment
 
-You can deploy this project using:
+Not yet available
 
 <!--
 Example:
@@ -163,9 +140,7 @@ Example:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
+## 👥 Author <a name="authors"></a>
 
 👤 **Author1: Oscar Fernández Muñoz**
 
@@ -174,23 +149,14 @@ Example:
 - LinkedIn: [LinkedIn](https://linkedin.com/in/OscarFMdev)
 
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **Improve user interface**
+- [ ] **Deploy project**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -210,7 +176,7 @@ Feel free to check the [issues page](../../issues/).
 
 > Write a message to encourage readers to support your project
 
-If you like this project...
+If you like this project kindly give it a star! ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -218,9 +184,7 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+I would like to thank rails and ruby documetation, it is well structured and understandable.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -228,15 +192,13 @@ I would like to thank...
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **How can I help with this project?**
 
-- **[Question_1]**
+  - You could add an issue or send a message to see how you could help.
 
-  - [Answer_1]
+- **Can I use your project to create my own**
 
-- **[Question_2]**
-
-  - [Answer_2]
+  - Sure, just send a message to understand how this project would be implemented.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -244,6 +206,6 @@ I would like to thank...
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

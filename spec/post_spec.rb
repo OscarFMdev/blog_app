@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   let(:user) do
     User.new(
-     name: 'Tom', 
-     photo: 'https://unsplash.com/photos/F_-0BxGuVvo', 
-     bio: 'Teacher from Mexico.', 
-     posts_counter: 3
-   )
- end
+      name: 'Tom',
+      photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+      bio: 'Teacher from Mexico.',
+      posts_counter: 3
+    )
+  end
 
   let(:post) do
     Post.new(

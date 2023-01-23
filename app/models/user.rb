@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3, maximum: 20 }
   validates :photo, presence: true
   validates :bio, presence: true, length: { minimum: 3, maximum: 140 }
-  # validates :posts_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :posts_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def last_three_posts
     posts.limit(3).order(created_at(:desc))

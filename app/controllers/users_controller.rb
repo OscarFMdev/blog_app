@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     users
     posts
@@ -11,9 +10,8 @@ class UsersController < ApplicationController
     posts
   end
 
-  
-
   private
+
   def user
     @user = User.find(params[:id])
   end
@@ -23,10 +21,10 @@ class UsersController < ApplicationController
   end
 
   def posts
-    @posts = Post.where( :author_id => params[:id])
+    @posts = Post.where(author_id: params[:id])
   end
 
   def comments
-    @comments = Comment.where( :post_id => params[:id])
+    @comments = Comment.where(post_id: params[:id])
   end
 end

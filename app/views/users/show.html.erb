@@ -1,0 +1,12 @@
+<img src="<%= @user.photo %>" >
+<h1 class="title"><%= @user.name %></h1>
+<h2>Number of posts: <%= @user.posts_counter %></h2>
+<h3>Bio:</h3>
+<p><%= @user.bio %></p>
+<h3>Posts:</h3>
+<% counter = 1 %>
+<% @posts.each do |post| %>
+  <h3>Post #<%= counter %></h3>
+  <p><%= post.text %></p>
+  <% counter += 1 %>
+<% end %>

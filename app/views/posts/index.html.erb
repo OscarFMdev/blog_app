@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1>
+<% counter = 1 %>
+<% @posts.each do |post| %>
+  <h3>Post #<%= counter %></h3>
+  <p><%= post.text %></p>
+  <% counter += 1 %>
+  <% comments = Comment.where(:post_id => post.id) %>
+  <h4>Comments (<%= comments.count %>):</h4>
+  <% comments.each do |comment| %>
+    <p><%= comment.text %></p>
+  <% end %>
+<% end %>

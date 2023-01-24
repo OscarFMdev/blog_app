@@ -27,15 +27,15 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'request a specific post' do
     before(:each) { get user_post_path(@user, @post) }
-  
+
     it 'Gives the correct response status' do
       expect(response).to have_http_status(:ok)
     end
-  
+
     it 'Renders the correct template' do
       expect(response).to render_template('show')
     end
-  
+
     it 'includes correct post title' do
       expect(response.body).to include('My first blog post')
     end

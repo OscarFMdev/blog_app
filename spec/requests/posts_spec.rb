@@ -19,5 +19,10 @@ RSpec.describe 'Posts', type: :request do
     it 'Renders the correct template' do
       expect(response).to render_template('index')
     end
+
+    it 'includes correct placeholder text' do
+      expect(response.body).to include('This is my first blog post')
+    end
   end
+
 end

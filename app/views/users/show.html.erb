@@ -1,12 +1,24 @@
-<img src="<%= @user.photo %>" >
-<h1 class="title"><%= @user.name %></h1>
-<h2>Number of posts: <%= @user.posts_counter %></h2>
-<h3>Bio:</h3>
-<p><%= @user.bio %></p>
-<h3>Posts:</h3>
-<% counter = 1 %>
-<% @posts.each do |post| %>
-  <h3>Post #<%= counter %></h3>
-  <p><%= post.text %></p>
-  <% counter += 1 %>
-<% end %>
+<%= render 'shared/user' %>
+
+<section class="info-section">
+  <div class="info-box">
+    <h3>Bio:</h3>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <h3 class="section-title">Posts:</h3>
+  <% counter = 1 %>
+  <% @posts.each do |post| %>
+  <div class="info-box">
+    <h3>Post #<%= counter %></h3>
+    <p><%= post.text %></p>
+    <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
+  </div>
+    <% counter += 1 %>
+  <% end %>
+
+  <button class="all-btn">
+    <%= link_to 'See all posts', user_posts_path(@user)%>
+  </button>
+
+</section>

@@ -1,12 +1,16 @@
-<h1><%= @user.name %></h1>
-<% counter = 1 %>
+<%= render 'shared/user' %>
+<% counter = 0%>
 <% @posts.each do |post| %>
-  <h3>Post #<%= counter %></h3>
-  <p><%= post.text %></p>
-  <% counter += 1 %>
-  <% comments = Comment.where(:post_id => post.id) %>
-  <h4>Comments (<%= comments.count %>):</h4>
-  <% comments.each do |comment| %>
-    <p><%= comment.text %></p>
+  <%= link_to user_post_url(id: post.id) do %>
+    <div class="info-box shadow-pop-br">
+      <h3>Post #<%= counter %></h3>
+      <p><%= post.text %></p>
+      <% counter += 1 %>
+      <% comments = Comment.where(:post_id => post.id) %>
+      <h4>Comments (<%= comments.count %>):</h4>
+      <% comments.each do |comment| %>
+        <p><%= comment.text %></p>
+      <% end %>
+    </div>
   <% end %>
 <% end %>

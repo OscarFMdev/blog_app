@@ -1,7 +1,15 @@
 <% @users.each do |user|%>
-
-  <h1><%= user.name %></h1>
-  <img src=<%=user.photo%>>
-  <p>Number of posts: <%= user.posts_counter %></p>
-
+    <div class="user-container flex-column">
+  <%= link_to user_path(user) do %>
+      <% if user.photo %>
+          <img src="<%= user.photo %>"/>
+      <% else %>
+          <p> No image found </p>
+      <% end %>
+      <div class="info-box flex-column shadow-pop-br">
+        <h1><%= user.name %></h1>
+        <p class="posts-counter">Number of posts: <span><%= user.posts_counter %></span></p>
+      </div>
+  <% end %>
+    </div>
 <% end %>

@@ -1,0 +1,41 @@
+/* index */
+.user-container {
+  display: flex;
+  justify-content: center;
+ }
+ 
+.info-box {
+  border: 1px solid black;
+  padding: 10px 100px;
+  margin: 10px 100px;
+} 
+
+.all-btn {
+  background-color: lightseagreen;
+  color: white;
+  border-style: none;
+  padding: 5px 20px;
+  border-radius: 3px;
+  align-self: center;
+ }
+
+.posts-counter {
+  font-weight: bolder;
+}
+ 
+.section-title {
+  margin: 10px 100px;
+}
+
+.posts-counter {
+  align-self: flex-end;
+ }
+
+ .info-section {
+  display: flex;
+  flex-direction: column;
+ }
+/* show */
+
+
+

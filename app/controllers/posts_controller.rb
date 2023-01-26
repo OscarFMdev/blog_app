@@ -20,23 +20,22 @@ class PostsController < ApplicationController
     @post.save
     redirect_to user_posts_path(current_user)
   end
-  
+
   private
-  
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
-  
+
   def post
     @post = Post.find_by(id: params[:id])
   end
-  
+
   def posts
     @posts = Post.where(author_id: user.id)
   end
-  
+
   def user
     @user = User.find(params[:user_id])
   end
-  
 end

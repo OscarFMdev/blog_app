@@ -1,4 +1,9 @@
 <%= render 'shared/user' %>
+<%= link_to new_post_path do %>
+  <div class="flex-column column-center">
+    <button class="add-post-btn">Add a new post </button>
+  </div>
+<% end %>
 <% counter = 0%>
 <% @user.posts.each do |post| %>
   <%= link_to user_post_url(id: post.id) do %>

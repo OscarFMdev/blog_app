@@ -9,4 +9,6 @@
   <% @post.comments.each do |comment| %>
     <p><%= comment.text %></p>
   <% end %>
+  <h4>Add a comment</h4>
+  <%= render 'shared/comment_form' %>
 </div>

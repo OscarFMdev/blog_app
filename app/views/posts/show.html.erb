@@ -5,8 +5,8 @@
 </div>
 
 <div class="info-box">
-  <h4>Comments (<%= @comments.count %>):</h4>
-  <% @comments.each do |comment| %>
+  <h4>Comments (<%= @post.comments.count %>):</h4>
+  <% @post.comments.each do |comment| %>
     <p><%= comment.text %></p>
   <% end %>
 </div>

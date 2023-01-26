@@ -1,0 +1,20 @@
+<section class="">
+<div class="">
+<h2 class="">New post:</h2>
+<%= form_with model: @post do |form| %>
+  <section class="form">
+    <div class="input-field">
+      <%= form.text_field :title, placeholder: 'Title'  %>
+    </div>
+
+    <div class="input-field">
+      <%= form.text_area :text, placeholder: 'Post.' %>
+    </div>
+
+    <div class="submit-btn">
+      <%= form.submit "Submit Post" %>
+    </div>
+  </section>
+<% end %>
+</div>
+</section>

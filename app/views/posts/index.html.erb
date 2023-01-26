@@ -1,6 +1,6 @@
 <%= render 'shared/user' %>
 <% counter = 0%>
-<% @posts.each do |post| %>
+<% @user.posts.each do |post| %>
   <%= link_to user_post_url(id: post.id) do %>
     <div class="info-box shadow-pop-br">
       <h3>Post #<%= counter %></h3>

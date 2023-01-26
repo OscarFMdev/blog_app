@@ -2,6 +2,7 @@
   <h3>Title: <%= @post.title %></h3>
   <span>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter%></span>
   <h4>Text: <%= @post.text %></h4>
+  <%= render 'shared/like' %>
 </div>
 
 <div class="info-box">

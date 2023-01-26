@@ -4,16 +4,15 @@
     <button class="add-post-btn">Add a new post </button>
   </div>
 <% end %>
-<% counter = 0%>
+<% counter = 1 %>
 <% @user.posts.each do |post| %>
   <%= link_to user_post_url(id: post.id) do %>
     <div class="info-box shadow-pop-br">
       <h3>Post #<%= counter %></h3>
       <p><%= post.text %></p>
       <% counter += 1 %>
-      <% comments = Comment.where(:post_id => post.id) %>
-      <h4>Comments (<%= comments.count %>):</h4>
-      <% comments.each do |comment| %>
+      <h4>Comments (<%= post.comments.count %>):</h4>
+      <% post.last_five_comments.each do |comment| %>
         <p><%= comment.text %></p>
       <% end %>
     </div>

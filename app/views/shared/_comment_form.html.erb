@@ -1,0 +1,7 @@
+<%= form_with model: Comment do |form| %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+  <div class='flex-column'>
+    <%= form.text_field :text, placeholder: "Comment something" %>
+  </div>
+    <%= form.submit "Add comment" %>
+<% end %>

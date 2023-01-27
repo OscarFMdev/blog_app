@@ -1,3 +1,29 @@
 .post-box {
   border: 1px solid black;
 }
+
+/* New */
+.add-post-btn {
+  align-self: center;
+}
+
+.input-field {
+  height: 30px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  height: 200px;
+  width: 300px;
+}
+
+.submit-btn {
+  margin-top: 200px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  justify-content: space-around;
+}

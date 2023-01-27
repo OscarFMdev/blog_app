@@ -35,6 +35,10 @@ a:active {
   flex-direction: column;
 }
 
+.column-center {
+  align-items: center;
+}
+
 /* animations */
 
 .shadow-pop-br:hover {

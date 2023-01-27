@@ -2,11 +2,14 @@
   <h3>Title: <%= @post.title %></h3>
   <span>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter%></span>
   <h4>Text: <%= @post.text %></h4>
+  <%= render 'shared/like' %>
 </div>
 
 <div class="info-box">
-  <h4>Comments (<%= @comments.count %>):</h4>
-  <% @comments.each do |comment| %>
+  <h4>Comments (<%= @post.comments.count %>):</h4>
+  <% @post.comments.each do |comment| %>
     <p><%= comment.text %></p>
   <% end %>
+  <h4>Add a comment</h4>
+  <%= render 'shared/comment_form' %>
 </div>

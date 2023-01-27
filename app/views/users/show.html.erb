@@ -8,13 +8,13 @@
 
   <h3 class="section-title">Posts:</h3>
   <% counter = 1 %>
-  <% @posts.each do |post| %>
-  <div class="info-box">
-    <h3>Post #<%= counter %></h3>
-    <p><%= post.text %></p>
-    <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
-  </div>
-    <% counter += 1 %>
+  <% @user.last_three_posts.each do |post| %>
+    <div class="info-box">
+      <h3>Post #<%= counter %></h3>
+      <p><%= post.text %></p>
+      <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
+    </div>
+      <% counter += 1 %>
   <% end %>
 
   <button class="all-btn">

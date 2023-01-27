@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   def index
     users
-    posts
-    comments
+    @current_user = current_user
   end
 
   def show
+    @current_user = current_user
     user
-    posts
   end
 
   private
@@ -18,13 +17,5 @@ class UsersController < ApplicationController
 
   def users
     @users = User.all
-  end
-
-  def posts
-    @posts = Post.where(author_id: params[:id])
-  end
-
-  def comments
-    @comments = Comment.where(post_id: params[:id])
   end
 end

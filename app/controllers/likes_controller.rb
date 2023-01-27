@@ -9,7 +9,7 @@ class LikesController < ApplicationController
     @like.author = @user
 
     if @like.save
-      redirect_to user_post_path(id: params.require(:post_id), author_id: params.require[:user_id])
+      redirect_to user_post_path(id: params.require(:post_id), author_id: params.require(:user_id))
     else
       render 'new'
     end

@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def post
-    @post = Post.find_by(id: params[:id])
+    @post = Post.includes(:comments, :likes).find(params[:id])
   end
 
   def posts

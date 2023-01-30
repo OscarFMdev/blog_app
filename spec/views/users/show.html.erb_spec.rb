@@ -36,38 +36,66 @@ RSpec.describe 'User show', type: :feature do
   end
 
   describe 'user show page' do
+    # user profile photo test
+    it 'displays the users profile photo' do
+      visit user_path(@user1)
+      expect(page).to have_css("img[src*='https://www.example.com']")
+    end
+    # username test
     it 'displays the right username' do
       visit user_path(@user1)
       expect(page).to have_content('Peter Parker')
       expect(page).to_not have_content('Bruce Wayne')
     end
 
-    it 'displays the users profile photo' do
-      visit user_path(@user1)
-      expect(page).to have_css("img[src*='https://www.example.com']")
-    end
-
-    it 'displays the right biography of first user' do
-      visit user_path(@user1)
-      expect(page).to have_content('Official spiderman hotographer')
-      expect(page).to_not have_content('Millionaire')
-    end
-
-    it 'displays the right biography of second user' do
-      visit user_path(@user2)
-      expect(page).to have_content('Millionaire')
-      expect(page).to_not have_content('Official spiderman hotographer')
-    end
-
+    # number of posts test
     it 'displays the number of posts the first user has written' do
       visit user_path(@user1)
       expect(page).to have_content('Number of posts: 4')
     end
 
+    # correct bio test
+    it 'displays the right biography of first user' do
+      visit user_path(@user1)
+      expect(page).to have_content('Official spiderman hotographer')
+      expect(page).to_not have_content('Millionaire')
+    end
+    # last three posts test
     it 'displays the last 3 posts' do
       visit user_path(@user1)
-      expect(page).to have_content('This is my third post')
       expect(page).to have_content('This is my second post')
+      expect(page).to have_content('This is my third post')
+      expect(page).to have_content('This is my fourth post')
+    end
+
+    # Button to see all posts exist test
+    it 'displays a button to view all posts' do
+      visit user_path(@user2)
+      expect(page).to have_content('See all posts')
+    end
+
+    # Button to see all posts exist test
+    it 'displays a button to view all posts' do
+      visit user_path(@user2)
+      expect(page).to have_content('See all posts')
+    end
+
+    # Redirects correctly to show post
+    it 'redirects to show post properly' do
+      visit user_path(@user1)
+      click_link 'Post #1'
+      expect(page).to have_content('This is my fourth post')
+      expect(page).to_not have_content('Please approve <3')
+    end
+
+    # Redirects correctly to show all posts
+    it 'redirects to show all posts properly' do
+      visit user_path(@user1)
+      click_link 'See all posts'
+      expect(page).to have_content('This is my first post')
+      expect(page).to have_content('This is my second post')
+      expect(page).to have_content('This is my third post')
+      expect(page).to have_content('This is my fourth post')
     end
   end
 end

@@ -66,6 +66,13 @@ RSpec.describe 'Post index', type: :feature do
       visit user_posts_path(@user1)
       expect(page).to have_content('This is my first post')
     end
+
+    it 'redirects to show user properly' do
+      visit user_posts_path(@user1)
+      click_link 'Post #1'
+      expect(page).to have_content('This is my first post')
+      expect(page).to_not have_content('Please approve <3')
+    end
   end
 
 end

@@ -51,6 +51,21 @@ RSpec.describe 'Post index', type: :feature do
       visit user_posts_path(@user1)
       expect(page).to have_content('Peter Parker')
     end
+
+    it 'the post counter renders correctly' do
+      visit user_posts_path(@user2)
+      expect(page).to have_content('Number of posts: 4')
+    end
+
+    it 'should not display the first user when the second user is displayed' do
+      visit user_posts_path(@user2)
+      expect(page).to_not have_content('Peter Parker')
+    end
+
+    it 'should render the created post' do
+      visit user_posts_path(@user1)
+      expect(page).to have_content('This is my first post')
+    end
   end
 
 end

@@ -13,7 +13,7 @@ RSpec.describe 'Post index', type: :feature do
       name: 'Bruce Wayne',
       bio: 'Millionaire',
       photo: 'https://www.example.com',
-      posts_counter: 0
+      posts_counter: 3
     )
 
     @post1 = Post.create(

@@ -50,7 +50,5 @@ RSpec.describe 'User index', type: :feature do
       expect(page).to have_content('Official spiderman hotographer')
       expect(page).to_not have_content('Millionaire')
     end
-
   end
-
 end

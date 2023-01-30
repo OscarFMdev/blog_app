@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'User show', type: :feature do
-
   before(:each) do
     @user1 = User.create(
       name: 'Peter Parker',
@@ -60,17 +59,15 @@ RSpec.describe 'User show', type: :feature do
     Comment.create(post_id: @post1.id, author_id: @user2.id, text: 'Nice post BTW')
     Comment.create(post_id: @post1.id, author_id: @user2.id, text: 'Yeah I agree')
 
-    Like.create(post_id: @post1.id,author_id: @user2.id)
-
+    Like.create(post_id: @post1.id, author_id: @user2.id)
 
     # Second post interactions
     Comment.create(post_id: @post2.id, author_id: @user1.id, text: 'First comment! Wow')
 
-    Like.create(post_id: @post2.id,author_id: @user1.id)
+    Like.create(post_id: @post2.id, author_id: @user1.id)
   end
 
   describe 'user show page' do
-
     it 'displays the right username' do
       visit user_path(@user1)
       expect(page).to have_content('Peter Parker')
@@ -104,7 +101,5 @@ RSpec.describe 'User show', type: :feature do
       expect(page).to have_content('This is my third post')
       expect(page).to have_content('This is my second post')
     end
-
   end
-
 end

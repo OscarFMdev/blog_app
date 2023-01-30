@@ -37,18 +37,17 @@ RSpec.describe 'Post show', type: :feature do
     Comment.create(post_id: @post1.id, author_id: @user2.id, text: 'Nice post BTW')
     Comment.create(post_id: @post1.id, author_id: @user2.id, text: 'Yeah I agree')
 
-    Like.create(post_id: @post1.id,author_id: @user2.id)
-
+    Like.create(post_id: @post1.id, author_id: @user2.id)
 
     # Second post interactions
     Comment.create(post_id: @post2.id, author_id: @user1.id, text: 'First comment! Wow')
 
-    Like.create(post_id: @post2.id,author_id: @user1.id)
+    Like.create(post_id: @post2.id, author_id: @user1.id)
   end
 
   describe 'post show page' do
     it 'displays the post title' do
-      visit user_post_path( @user1, @post1 )
+      visit user_post_path(@user1, @post1)
       expect(page).to have_content('Title: ')
     end
 
@@ -68,7 +67,5 @@ RSpec.describe 'Post show', type: :feature do
 
       expect(page).to have_content('Comments (3):')
     end
-
   end
-
 end

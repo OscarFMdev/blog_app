@@ -37,13 +37,12 @@ RSpec.describe 'Post index', type: :feature do
     Comment.create(post_id: @post1.id, author_id: @user2.id, text: 'Nice post BTW')
     Comment.create(post_id: @post1.id, author_id: @user2.id, text: 'Yeah I agree')
 
-    Like.create(post_id: @post1.id,author_id: @user2.id)
-
+    Like.create(post_id: @post1.id, author_id: @user2.id)
 
     # Second post interactions
     Comment.create(post_id: @post2.id, author_id: @user1.id, text: 'First comment! Wow')
 
-    Like.create(post_id: @post2.id,author_id: @user1.id)
+    Like.create(post_id: @post2.id, author_id: @user1.id)
   end
 
   describe 'post index page' do
@@ -74,5 +73,4 @@ RSpec.describe 'Post index', type: :feature do
       expect(page).to_not have_content('Please approve <3')
     end
   end
-
 end

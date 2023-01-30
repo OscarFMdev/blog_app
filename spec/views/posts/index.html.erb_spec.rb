@@ -2,27 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'Post index', type: :feature do
   before(:each) do
-    @user1 = User.create(
-      name: 'Peter Parker',
-      bio: 'Official spiderman hotographer',
-      photo: 'https://www.example.com',
-      posts_counter: 0
-    )
+    @user1 = User.create(name: 'Peter Parker', bio: 'Official spiderman hotographer', photo: 'https://www.example.com',
+                         posts_counter: 0)
 
-    @user2 = User.create(
-      name: 'Bruce Wayne',
-      bio: 'Millionaire',
-      photo: 'https://www.example.com',
-      posts_counter: 3
-    )
+    @user2 = User.create(name: 'Bruce Wayne', bio: 'Millionaire', photo: 'https://www.example.com', posts_counter: 3)
 
-    @post1 = Post.create(
-      author_id: @user1.id,
-      title: 'First post',
-      text: 'This is my first post',
-      comments_counter: 0,
-      likes_counter: 0
-    )
+    @post1 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
+                         likes_counter: 0)
 
     @post2 = Post.create(
       author_id: @user2.id,

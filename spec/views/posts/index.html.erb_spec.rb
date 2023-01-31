@@ -54,7 +54,7 @@ RSpec.describe 'Post index', type: :feature do
       expect(page).to have_content('Peter Parker')
     end
 
-    # Number of posts test 
+    # Number of posts test
     it 'the post counter renders correctly' do
       visit user_posts_path(@user2)
       expect(page).to have_content('Number of posts: 4')

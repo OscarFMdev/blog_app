@@ -17,7 +17,7 @@ RSpec.describe 'User show', type: :feature do
     @post4 = Post.create(author_id: @user1.id, title: 'Fourth post', text: 'This is my fourth post',
                          comments_counter: 0,
                          likes_counter: 0)
-                         
+
     @post6 = Post.create(author_id: @user1.id, title: 'Fifth post', text: 'This is my fifth post',
                          comments_counter: 0,
                          likes_counter: 0)
@@ -81,7 +81,7 @@ RSpec.describe 'User show', type: :feature do
     # Button to see all posts exist test
     it 'displays a button to view all posts' do
       visit user_path(@user1)
-      expect(page).to have_content("See all posts")
+      expect(page).to have_content('See all posts')
     end
 
     # Redirects correctly to show post

@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe 'Post show', type: :feature do
   before(:each) do
     @user1 = User.create(name: 'Peter Parker', bio: 'Official spiderman hotographer', photo: 'https://www.example.com',
-                         posts_counter: 0)
+                        posts_counter: 0)
 
     @user2 = User.create(name: 'Bruce Wayne', bio: 'Millionaire', photo: 'https://www.example.com', posts_counter: 3)
 
     @post1 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
-                         likes_counter: 0)
+                        likes_counter: 0)
 
     @post2 = Post.create(author_id: @user2.id, title: 'Hello World', text: 'My first post too!', comments_counter: 0,
-                         likes_counter: 0)
+                        likes_counter: 0)
 
     # First post interactions
     Comment.create(post_id: @post1.id, author_id: @user1.id, text: 'First comment! Wow')
@@ -27,22 +27,40 @@ RSpec.describe 'Post show', type: :feature do
   end
 
   describe 'post show page' do
+    # See post title
     it 'displays the post title' do
       visit user_post_path(@user1, @post1)
       expect(page).to have_content('Title: ')
     end
 
+    # See post's comments and likes number
     it 'the comments and likes counters renders correctly' do
       visit user_post_path(@user1, @post1)
       expect(page).to have_content('Comments: 3 Likes: 1')
     end
 
+    # see commentor's name
     it 'should render comments corectly' do
       visit user_post_path(@user2, @post2)
 
       expect(page).to have_content('First comment! Wow')
     end
 
+    # I can see the post body
+    it 'should render comments corectly' do
+      visit user_post_path(@user1, @post1)
+
+      expect(page).to have_content('Text: My first post too!')
+    end
+
+    # see commentor name
+    it 'should render comments corectly' do
+      visit user_post_path(@user2, @post1)
+
+      expect(page).to have_content('Bruce Wayne')
+    end
+
+    # see commentor's name
     it 'should render comments corectly' do
       visit user_post_path(@user1, @post1)
 

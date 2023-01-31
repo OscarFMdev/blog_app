@@ -25,6 +25,7 @@ RSpec.describe 'User index', type: :feature do
   end
 
   describe 'users index page' do
+    # Display all the usernames test
     it 'displays the created users' do
       visit users_path
       expect(page).to have_content('Peter Parker')
@@ -32,11 +33,13 @@ RSpec.describe 'User index', type: :feature do
       expect(page).to have_content('Tony stark')
     end
 
+    # Profile picture test
     it 'shows the right photo' do
       visit users_path
       expect(page).to have_css("img[src*='https://www.example.com']")
     end
 
+    # Number of posts test
     it 'displays the right Number of posts' do
       visit users_path
       expect(page).to have_content('Number of posts: 0')
@@ -44,6 +47,7 @@ RSpec.describe 'User index', type: :feature do
       expect(page).to have_content('Number of posts: 3')
     end
 
+    # Redirect to a specific user test
     it 'redirects to show user properly' do
       visit users_path
       click_link 'Peter Parker'

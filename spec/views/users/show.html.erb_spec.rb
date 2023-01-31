@@ -88,7 +88,7 @@ RSpec.describe 'User show', type: :feature do
     it 'redirects to show post properly' do
       visit user_path(@user1)
       click_link 'Post #1'
-      expect(page).to have_content('This is my fourth post')
+      expect(page).to have_content('This is my fifth post')
       expect(page).to_not have_content('Please approve <3')
     end
 

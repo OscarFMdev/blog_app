@@ -50,7 +50,7 @@ RSpec.describe 'Post show', type: :feature do
     it 'should render comments corectly' do
       visit user_post_path(@user1, @post1)
 
-      expect(page).to have_content('Text: My first post too!')
+      expect(page).to have_content('Text: This is my first post')
     end
 
     # see commentor name

@@ -17,6 +17,10 @@ RSpec.describe 'User show', type: :feature do
     @post4 = Post.create(author_id: @user1.id, title: 'Fourth post', text: 'This is my fourth post',
                          comments_counter: 0,
                          likes_counter: 0)
+                         
+    @post6 = Post.create(author_id: @user1.id, title: 'Fifth post', text: 'This is my fifth post',
+                         comments_counter: 0,
+                         likes_counter: 0)
 
     # Second user single post
     @post5 = Post.create(author_id: @user2.id, title: 'Hello World', text: 'My first post too!', comments_counter: 0,
@@ -51,7 +55,7 @@ RSpec.describe 'User show', type: :feature do
     # number of posts test
     it 'displays the number of posts the first user has written' do
       visit user_path(@user1)
-      expect(page).to have_content('Number of posts: 4')
+      expect(page).to have_content('Number of posts: 5')
     end
 
     # correct bio test
@@ -63,21 +67,21 @@ RSpec.describe 'User show', type: :feature do
     # last three posts test
     it 'displays the last 3 posts' do
       visit user_path(@user1)
-      expect(page).to have_content('This is my second post')
       expect(page).to have_content('This is my third post')
       expect(page).to have_content('This is my fourth post')
+      expect(page).to have_content('This is my fifth post')
     end
 
     # Button to see all posts exist test
     it 'displays a button to view all posts' do
       visit user_path(@user2)
-      expect(page).to have_content('See all posts')
+      expect(page).to_not have_content('See all posts')
     end
 
     # Button to see all posts exist test
     it 'displays a button to view all posts' do
-      visit user_path(@user2)
-      expect(page).to have_content('See all posts')
+      visit user_path(@user1)
+      expect(page).to have_content("See all posts")
     end
 
     # Redirects correctly to show post

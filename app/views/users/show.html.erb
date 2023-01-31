@@ -19,8 +19,9 @@
       <% counter += 1 %>
   <% end %>
 
-  <button class="all-btn">
-    <%= link_to 'See all posts', user_posts_path(@user)%>
-  </button>
-
+  <% unless @user.posts.count <= 4 %>
+    <button class="all-btn">
+      <%= link_to 'See all posts', user_posts_path(@user)%>
+    </button>
+  <% end %>
 </section>

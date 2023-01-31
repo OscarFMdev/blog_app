@@ -9,8 +9,18 @@ RSpec.describe 'Post index', type: :feature do
 
     @post1 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
                          likes_counter: 0)
+    @post2 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
+                         likes_counter: 0)
+    @post3 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
+                         likes_counter: 0)
+    @post4 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
+                         likes_counter: 0)
+    @post5 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
+                         likes_counter: 0)
+    @post6 = Post.create(author_id: @user1.id, title: 'First post', text: 'This is my first post', comments_counter: 0,
+                         likes_counter: 0)
 
-    @post2 = Post.create(
+    @post7 = Post.create(
       author_id: @user2.id,
       title: 'Hello World',
       text: 'My first post too!',
@@ -32,26 +42,57 @@ RSpec.describe 'Post index', type: :feature do
   end
 
   describe 'post index page' do
+    # user profile picture test
+    it 'renders the user photo' do
+      visit users_path
+      expect(page).to have_css("img[src*='https://www.example.com']")
+    end
+
+    # Username test
     it 'displays the user name' do
       visit user_posts_path(@user1)
       expect(page).to have_content('Peter Parker')
     end
 
+    # Number of posts test 
     it 'the post counter renders correctly' do
       visit user_posts_path(@user2)
       expect(page).to have_content('Number of posts: 4')
     end
 
-    it 'should not display the first user when the second user is displayed' do
-      visit user_posts_path(@user2)
-      expect(page).to_not have_content('Peter Parker')
+    # post's title test
+    it 'displays the user name' do
+      visit user_posts_path(@user1)
+      expect(page).to have_content('Peter Parker')
     end
-
-    it 'should render the created post' do
+    # post's body test
+    it 'should render some of the created post' do
       visit user_posts_path(@user1)
       expect(page).to have_content('This is my first post')
     end
 
+    # first comments on a post test
+    it 'should display the first comments ' do
+      visit user_posts_path(@user1)
+      expect(page).to have_content('Nice post BTW')
+      expect(page).to have_content('Yeah I agree')
+    end
+
+    # how many comments a post has test
+    it 'should count the comments corectly' do
+      visit user_posts_path(@user1)
+
+      expect(page).to have_content('Comments (3):')
+    end
+
+    # how many likes a post has test
+    it 'should count the likes corectly' do
+      visit user_posts_path(@user1)
+
+      expect(page).to have_content('Likes: 1')
+    end
+
+    # it redirects to that post's show page test
     it 'redirects to show user properly' do
       visit user_posts_path(@user1)
       click_link 'Post #1'

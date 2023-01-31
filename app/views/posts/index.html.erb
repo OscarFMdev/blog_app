@@ -10,6 +10,7 @@
     <div class="info-box shadow-pop-br">
       <h3>Post #<%= counter %></h3>
       <p><%= post.text %></p>
+      <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
       <% counter += 1 %>
       <h4>Comments (<%= post.comments.count %>):</h4>
       <% post.last_five_comments.each do |comment| %>

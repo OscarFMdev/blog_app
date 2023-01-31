@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   private
 
   def user
-    @user = User.find(params[:id])
+    @user = User.includes(:posts).find(params[:id])
   end
 
   def users

@@ -23,6 +23,11 @@ RSpec.describe 'Posts', type: :request do
     it 'includes correct placeholder text' do
       expect(response.body).to include('This is my first blog post')
     end
+
+    it 'Checks for full list of posts info into the body' do
+      expect(response.body).to include('<h3>Post #1</h3>')
+      expect(response.body).to include('This is my first blog post')
+    end
   end
 
   describe 'request a specific post' do
@@ -38,6 +43,11 @@ RSpec.describe 'Posts', type: :request do
 
     it 'includes correct post title' do
       expect(response.body).to include('My first blog post')
+    end
+
+    it 'Checks for single post info into the body' do
+      expect(response.body).to include('My first blog post')
+      expect(response.body).to_not include('This is my second blog post!')
     end
   end
 end

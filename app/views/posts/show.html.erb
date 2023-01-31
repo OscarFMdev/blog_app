@@ -8,6 +8,7 @@
 <div class="info-box">
   <h4>Comments (<%= @post.comments.count %>):</h4>
   <% @post.comments.each do |comment| %>
+    <p><%= comment.author.name %></p>
     <p><%= comment.text %></p>
   <% end %>
   <h4>Add a comment</h4>

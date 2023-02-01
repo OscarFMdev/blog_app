@@ -153,11 +153,10 @@ Example:
 - LinkedIn: [LinkedIn](https://linkedin.com/in/OscarFMdev)
 
 
-👤 **Author2**
+👤 **Mhamad Raad**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Mhamad-Raad](https://github.com/Mhamad-Raad)
+- LinkedIn: [Mhamad Raad](https://www.linkedin.com/in/mhamad-raad)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

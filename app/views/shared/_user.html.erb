@@ -1,10 +1,10 @@
 <div class="user-container flex-column">
   <div class="info-box flex-column">
-  <% if @user.photo %>
-      <img src="<%= @user.photo %>"/>
-  <% else %>
+    <% if @user.photo %>
+      <%= image_tag @user.photo, width: 100 if @user.photo.attached? %>
+    <% else %>
       <p> No image found </p>
-  <% end %>
+    <% end %>
     <h1><%= @user.name %></h1>
     <p class="posts-counter">Number of posts: <span><%= @user.posts_counter %></span></p>
   </div>

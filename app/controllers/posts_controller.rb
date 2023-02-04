@@ -27,7 +27,6 @@ class PostsController < ApplicationController
     redirect_to user_posts_path(current_user), notice: 'Your product has been successfully deleted'
   end
 
-
   private
 
   def post_params

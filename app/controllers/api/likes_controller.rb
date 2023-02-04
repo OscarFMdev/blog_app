@@ -1,6 +1,4 @@
 class Api::LikesController < ApplicationController
-  before_action :set_like, only: [:show, :update, :destroy]
-
   # GET api/users/:user_id/posts/:post_id/likes
   def index
     @likes = Like.where(post_id: post.id)
@@ -38,11 +36,6 @@ class Api::LikesController < ApplicationController
   end
 
   private
-    # Callbacks to share common setup or constraints between actions.
-    def set_like
-      @like = Like.find(params[:id])
-    end
-
     # Only allow a trusted parameter "white list" through.
     def like_params
       params.require(:like).permit(:post_id, :user_id)

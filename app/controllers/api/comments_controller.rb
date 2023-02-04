@@ -1,6 +1,4 @@
 class Api::CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :update, :destroy]
-
   # GET api/users/:user_id/:post_id/comments
   def index
     @comments = Comment.where(post_id: post.id)
@@ -38,11 +36,6 @@ class Api::CommentsController < ApplicationController
   end
 
   private
-    # Callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
-
     # Only allow a trusted parameter "white list" through.
     def comment_params
       params.require(:comment).permit(:title, :text)

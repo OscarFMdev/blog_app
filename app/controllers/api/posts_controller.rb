@@ -1,6 +1,4 @@
 class Api::PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
-
   # GET api/users/:user_id/posts
   def index
     @posts = Post.where(author_id: user.id)
@@ -38,10 +36,6 @@ class Api::PostsController < ApplicationController
   end
 
   private
-    # Callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
     # Only allow a trusted parameter "white list" through.
     def post_params

@@ -36,16 +36,17 @@ class Api::CommentsController < ApplicationController
   end
 
   private
-    # Only allow a trusted parameter "white list" through.
-    def comment_params
-      params.require(:comment).permit(:title, :text)
-    end
 
-    def user
-      @user = User.find(params[:user_id])
-    end
+  # Only allow a trusted parameter "white list" through.
+  def comment_params
+    params.require(:comment).permit(:title, :text)
+  end
 
-    def post
-      @post = Post.find(params[:post_id])
-    end
+  def user
+    @user = User.find(params[:user_id])
+  end
+
+  def post
+    @post = Post.find(params[:post_id])
+  end
 end

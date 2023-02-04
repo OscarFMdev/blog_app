@@ -36,16 +36,17 @@ class Api::LikesController < ApplicationController
   end
 
   private
-    # Only allow a trusted parameter "white list" through.
-    def like_params
-      params.require(:like).permit(:post_id, :user_id)
-    end
 
-    def user
-      @user = User.find(params[:user_id])
-    end
+  # Only allow a trusted parameter "white list" through.
+  def like_params
+    params.require(:like).permit(:post_id, :user_id)
+  end
 
-    def post
-      @post = Post.find(params[:post_id])
-    end
+  def user
+    @user = User.find(params[:user_id])
+  end
+
+  def post
+    @post = Post.find(params[:post_id])
+  end
 end

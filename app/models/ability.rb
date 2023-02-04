@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -14,9 +12,10 @@ class Ability
     can :update, Comment, author_id: user.id
     can :destroy, Comment, author_id: user.id
 
-    if user.role == 'admin'
-      can :manage, :all
-    end
+    return unless user.role == 'admin'
+
+    can :manage, :all
+
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

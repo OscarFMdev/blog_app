@@ -37,12 +37,12 @@ class Api::PostsController < ApplicationController
 
   private
 
-    # Only allow a trusted parameter "white list" through.
-    def post_params
-      params.require(:post).permit(:title, :text)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 
-    def user
-      @user = User.find(params[:user_id])
-    end
+  def user
+    @user = User.find(params[:user_id])
+  end
 end

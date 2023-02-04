@@ -3,6 +3,9 @@
   <span>Comments: <%= @post.comments_counter %> Likes: <%= @post.likes_counter%></span>
   <h4>Text: <%= @post.text %></h4>
   <%= render 'shared/like' %>
+  <% if can? :destroy, @post %>
+    <%= link_to 'Delete', user_post_path(user_id: @post.author_id, post_id: @post.id), data: { confirm: 'Are you sure?' },  method: :destroy %>
+  <% end %>
 </div>
 
 <div class="info-box">
@@ -10,6 +13,9 @@
   <% @post.comments.each do |comment| %>
     <p><%= comment.author.name %></p>
     <p><%= comment.text %></p>
+    <% if can? :destroy, comment %>
+      <%= button_to 'Delete', user_post_comment_path(@post.author_id, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   <% end %>
   <h4>Add a comment</h4>
   <%= render 'shared/comment_form' %>

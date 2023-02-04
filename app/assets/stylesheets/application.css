@@ -18,6 +18,11 @@
   text-decoration: none;
 }
 
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,9,121,1) 35%, rgba(0,91,255,1) 100%);
+}
+
 a,
 a:visited,
 a:hover,
@@ -37,6 +42,16 @@ a:active {
 
 .column-center {
   align-items: center;
+}
+
+.header {
+  background-color: black;
+  justify-content: space-around;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
 }
 
 /* animations */

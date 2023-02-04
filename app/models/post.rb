@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   include ApplicationHelper
-  has_many :likes, foreign_key: :post_id
-  has_many :comments, foreign_key: :post_id
+  has_many :likes, foreign_key: :post_id, dependent: :destroy
+  has_many :comments, foreign_key: :post_id, dependent: :destroy
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   after_save :update_posts_counter
 

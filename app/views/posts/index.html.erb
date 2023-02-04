@@ -1,9 +1,14 @@
 <%= render 'shared/user' %>
-<%= link_to new_post_path do %>
-  <div class="flex-column column-center">
-    <button class="add-post-btn">Add a new post </button>
-  </div>
+
+<% if can? :create, @post %>
+  <%= link_to new_post_path do %>
+    <div class="flex-column column-center">
+      <button class="add-post-btn">Add a new post </button>
+    </div>
+  <% end %>
 <% end %>
+
+
 <% counter = 1 %>
 <% @user.posts.each do |post| %>
   <%= link_to user_post_url(id: post.id) do %>
@@ -17,5 +22,12 @@
         <p><%= comment.text %></p>
       <% end %>
     </div>
+    <% if can? :destroy, post %>
+      <%= link_to 'Delete', user_post_path(user_id: @user.id, id: post.id), data: { 
+        turbo_method: :delete, 
+        confirm: 'Are you sure?' 
+        } 
+      %>
+    <% end %>
   <% end %>
 <% end %>

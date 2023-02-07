@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     user
     @current_user = current_user
   end
 
   def show
-    post
     @current_user = current_user
   end
 
@@ -19,6 +19,12 @@ class PostsController < ApplicationController
 
     @post.save
     redirect_to user_posts_path(current_user)
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(current_user), notice: 'Your product has been successfully deleted'
   end
 
   private
